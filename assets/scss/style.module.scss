@@ -1,0 +1,603 @@
+$dark-color: #101010;
+$yellow-color: #fadf3c;
+$cat-bg: #F3F3F3;
+
+@mixin d-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin lines($line) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: $line;
+	line-clamp: $line;
+}
+
+.line-clamp-1 {
+	@include lines(1);
+}
+
+.line-clamp-2 {
+	@include lines(2);
+}
+
+/*  */
+.ltr {
+	direction: ltr;
+}
+
+
+blockquote,
+dl,
+dd,
+hr,
+figure,
+p,
+pre,
+button,
+ul,
+ol,
+div {
+	margin: 0;
+	font-size: 9px;
+}
+
+h1 {
+	font-size: 15px;
+}
+
+h2 {
+	font-size: 14px;
+}
+
+h3 {
+	font-size: 13px;
+}
+
+h4 {
+	font-size: 12px;
+}
+
+h5 {
+	font-size: 11px;
+}
+
+h6 {
+	font-size: 10px;
+}
+
+/* =========== iran yekan ============= */
+@font-face {
+	font-family: 'IranYekan';
+	src: url('../fonts/iranYekan/woff2/iranyekanweblight.woff2') format('woff2'),
+		url('../fonts/iranYekan/woff/iranyekanweblight.woff') format('woff'),
+		url('../fonts/iranYekan/ttf/iranyekanweblight.ttf') format('truetype');
+	font-weight: 300;
+	/* Safari, Android, iOS */
+}
+
+@font-face {
+	font-family: 'IranYekan';
+	src: url('../fonts/iranYekan/woff2/iranyekanwebregular.woff2') format('woff2'),
+		url('../fonts/iranYekan/woff/iranyekanwebregular.woff') format('woff'),
+		url('../fonts/iranYekan/ttf/iranyekanwebregular.ttf') format('truetype');
+	font-weight: 400;
+	/* Safari, Android, iOS */
+}
+
+@font-face {
+	font-family: 'IranYekan';
+	src: url('../fonts/iranYekan/woff2/iranyekanwebbold.woff2') format('woff2'),
+		url('../fonts/iranYekan/woff/iranyekanwebbold.woff') format('woff'),
+		url('../fonts/iranYekan/ttf/iranyekanwebbold.ttf') format('truetype');
+	font-weight: 500;
+	/* Safari, Android, iOS */
+}
+
+body {
+	font-family: 'IranYekan';
+	min-height: 100vh;
+	direction: rtl;
+	max-width: 576px;
+	margin-right: auto;
+	margin-left: auto;
+	background: #fff;
+	position: relative;
+}
+
+html {
+	background: #eee;
+}
+
+.app-tab-bar {
+	max-width: 576px;
+	margin-right: auto;
+	margin-left: auto;
+	left: 0%;
+	right: 0%;
+}
+
+
+#app {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	max-width: calc(100% - 40px);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.menuHeader {
+	padding: 1rem 0;
+
+	a {
+		font-size: 11px;
+	}
+
+	.nuxt-link-exact-active.nuxt-link-active {
+		background: $yellow-color;
+		color: #000;
+		padding: 5px;
+		border-radius: 4px;
+	}
+}
+
+/* =============strt Vant Override ============== */
+.van-field__error-message {
+	text-align: right;
+}
+
+/* pagination */
+.van-pagination__item--active {
+	background-color: $yellow-color;
+}
+
+.van-pagination__item:active {
+	color: #fff;
+	background-color: darken($color: $yellow-color, $amount: 10%);
+}
+
+.van-pagination__item {
+	color: #000;
+	font-size: 10px;
+}
+
+/* end pagination */
+
+.van-dialog {
+	font-size: 13px;
+}
+
+.HeaderSearch {
+	.van-cell.van-cell--borderless.van-field {
+		direction: ltr;
+	}
+
+	.van-field__control {
+		text-align: right;
+		font-size: 8px;
+	}
+
+	.van-search {
+		padding: 5px 12px;
+	}
+
+}
+
+/* =============End Vant Override ============== */
+/* =============strt tab bar ============== */
+.app-tab-bar {
+	background-color: #000;
+}
+
+.van-tabbar {
+	z-index: 2;
+}
+
+.van-tabbar-item--active {
+	color: #fadf3c;
+	background-color: unset;
+}
+
+/* =============end tab bar ============== */
+/* =============start Side Bar ============== */
+.van-popup--right {
+	min-height: 100vh;
+	min-width: 80%;
+}
+
+.sideBar_logo {
+	background-color: #101010;
+	min-height: 200px;
+	@include d-center();
+}
+
+.van-cell {
+	padding: 10px 20px;
+}
+
+.sideBar_social_media_wrapper {
+	margin: 20px;
+
+	.sideBar_social_media_item {
+		margin-top: 13px;
+		display: flex;
+		align-items: center;
+
+		a {
+			+a {
+				margin-right: 15px;
+			}
+		}
+	}
+}
+
+.sideBar_phone_wrapper {
+	margin-right: 20px;
+	margin-bottom: 30px;
+
+	.sideBar_phone {
+		margin-top: 13px;
+		display: flex;
+		align-items: center;
+
+		span {
+			margin-right: 5px;
+		}
+	}
+}
+
+
+/* =============end tab bar ============== */
+/* =============start Header ============== */
+header {
+
+	.HeaderSearch {
+		.searchBtn {
+			@extend .HeadercalcWeight;
+		}
+	}
+
+	.HeadercalcWeight {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-family: 'IRANYekan';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 8px;
+		line-height: 21px;
+		/* identical to box height, or 262% */
+		letter-spacing: -0.078px;
+		color: #000000;
+		margin-bottom: -15px;
+		margin-top: 2px;
+	}
+}
+
+.disabled {
+	opacity: .5;
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
+/* =============end Header ============== */
+
+/* =============Start Home ============== */
+/* Start Cat */
+.Home_category_box {
+	padding: 7px;
+
+	.Home_category_box_text {
+		display: flex;
+		flex-direction: column;
+
+		strong {
+			font-family: 'IRANYekan';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 21px;
+			/* identical to box height */
+			text-align: right;
+			color: #000000;
+			@include lines(1);
+		}
+
+		span {
+			font-family: 'IRANYekan';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 8px;
+			line-height: 14px;
+			/* identical to box height */
+			text-align: right;
+			color: #000000;
+			@include lines(1);
+			max-width: 70%;
+		}
+	}
+
+	.Home_category_box_icon {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: -10px;
+
+		svg {
+			max-width: 50px;
+			max-height: 50px;
+		}
+	}
+}
+
+/* EndCat */
+/* Start HomeProduct */
+.HomeProduct {
+	min-height: 200px;
+	width: 100%;
+	background-color: $dark-color;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	min-width: 100%;
+
+	.flex.flex-row {
+		width: 100%;
+	}
+
+}
+
+/* End HomeProduct */
+
+/* Start Special Offer */
+.special_offer {
+	min-width: 100%;
+	// min-height: 200px;
+
+}
+
+/* End Special Offer */
+
+/* Start Home Blog */
+.Home_blog {
+	// min-height: 200px;
+	margin-bottom: 60px;
+}
+
+/* End Home Blog */
+
+/* Start Swiper */
+
+
+/* End Swiper */
+/* =============End Home ============== */
+
+/* =============Start Login ============== */
+
+.Login {
+	font-size: 12px;
+
+	P {
+		font-size: 12px;
+	}
+
+	.van-field__error-message {
+		position: absolute;
+		top: 43px;
+		right: 0;
+	}
+
+	.van-field__control {
+		font-size: 12px;
+		color: #fff;
+	}
+
+	.van-cell {
+		background-color: unset;
+	}
+}
+
+
+
+/* =============End Login ============== */
+/* =============Start ConfirmCode ============== */
+.van-key {
+	color: #000;
+}
+
+.van-password-input {
+	width: 100%;
+}
+
+.van-password-input__security li {
+	background: unset;
+	color: #fff;
+}
+
+.van-password-input__security i {
+	background-color: #fff;
+}
+
+.van-password-input__cursor {
+	background-color: #fff;
+}
+
+/* =============End ConfirmCode ============== */
+/* =============End Login ============== */
+/* =============Start Transition============== */
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-active {
+	opacity: 0;
+}
+
+/* =============End Transition ============== */
+/* =============Start ContactUs ============== */
+/* start map */
+.gm-style .place-card .place-name {
+	font-size: 10px;
+}
+
+.map_wrapper .gm-style place-card.place-card-medium {
+	display: none !important;
+}
+
+.gm-style .place-card div,
+.gm-style .place-card a,
+.gm-style .default-card div,
+.gm-style .default-card a {
+	font-size: 10px;
+}
+
+.gm-control-active {
+	width: 20px !important;
+	height: 20px !important;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom>.gmnoprint>div {
+	width: 30px;
+	height: 51px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom {
+	bottom: 70px !important;
+	right: 30px !important;
+}
+
+/* end map */
+.ContactUs {
+	margin-bottom: 60px;
+
+	.gm-style {
+		display: none;
+	}
+
+	.map_wrapper [style="background-color: white; margin: 10px; padding: 1px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px;"] {
+		display: none;
+	}
+
+	.contactText {
+		p {
+			font-size: 12px;
+		}
+	}
+
+
+	/* form */
+	.van-field__control {
+		background: #F3F3F3;
+		border-radius: 3px;
+		min-height: 35px;
+		padding: 0 8px;
+		font-size: 11px;
+		text-align: right;
+	}
+}
+
+/* =============End ContactUs ============== */
+/* =============Start AboutUs ============== */
+.AboutUs {
+	.aboutBanner {
+		img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+
+	.about_container {
+		margin-top: -70px;
+		background-color: #F3F3F3;
+		border-radius: 3px;
+		padding: 13px;
+		position: relative;
+
+		p {
+			font-size: 8px;
+			line-height: 14px;
+		}
+	}
+
+}
+
+/* =============End AboutUs ============== */
+/* =============Start CalculateWeight ============== */
+.CalculateWeight {
+	margin-top: 10px;
+	margin-bottom: 70px;
+
+	.van-field__control::placeholder {
+		font-size: 8px;
+		text-align: center;
+	}
+}
+
+/* =============End CalculateWeight ============== */
+
+/* =============Start Rules ============== */
+.rules {
+	margin-top: 15px;
+	min-height: 80vh;
+	margin-bottom: 55px;
+
+	p {
+		text-align: justify !important;
+		padding-right: 1rem;
+	}
+}
+
+/* =============End Rules ============== */
+
+/* =============End faq ============== */
+.faq {
+	min-height: 80vh;
+	margin-bottom: 60px;
+	padding-top: 13px;
+
+	// .van-hairline--top-bottom::after,
+	// .van-hairline-unset--top-bottom::after {
+	// 	border-width: 0;
+	// }
+
+	.van-collapse-item__content {
+		font-size: 9px;
+	}
+
+	.van-cell__title span {
+		font-size: 10px;
+	}
+}
+
+/* =============End faq ============== */
+
+
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+
+	a:hover {
+		color: #747bff;
+	}
+
+	button {
+		background-color: #f9f9f9;
+	}
+}
